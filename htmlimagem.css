@@ -9,7 +9,7 @@ body, html{
     padding: 0px;
 }
 .bg-image{
-    background-image: url(../tic/nbgblur.jpg);
+    background-image: url(../tic/fundo/nbgblur.jpg);
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
