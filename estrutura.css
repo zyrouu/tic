@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body, html{
+    height: 100%;
+    overflow: hidden;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.2)),
+                          url(../tic/nbg.jpg);
+        background-size: cover;
+}
+::selection{
+    background-color: cyan;
+}
+
+.tabbed{
+    width: 700px;
+    margin: 50px auto;
+}
+
+.tabbed > input{
+    display: none;
+}
+
+.tabbed >label{
+    display: block;
+    float: left;
+    padding: 12px 18px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label{
+    background-color: cyan;
+}
+
+.tabs{
+    clear: both;
+    perspective: 600px;
+}
+
+.tabs > div{
+    width: 688px;
+    position: absolute;
+    border: 2px solid cyan;
+    padding: 10px 30px 40px;
+    line-height: 1.4em;
+    opacity: 0;
+    z-index: 0;
+    transform: rotateX(20deg);
+    transform-origin: top center;
+    transition: opacity 0.3s, transform 1s;
+}
+
+#tab_one:checked ~ .tabs > div:nth-of-type(1),
+#tab_two:checked ~ .tabs > div:nth-of-type(2),
+#tab_three:checked ~ .tabs > div:nth-of-type(3),
+#tab_four:checked ~ .tabs > div:nth-of-type(4),
+#tab_five:checked ~ .tabs > div:nth-of-type(5),
+#tab_six:checked ~ .tabs > div:nth-of-type(6),
+#tab_seven:checked ~ .tabs > div:nth-of-type(7),
+#tab_eight:checked ~ .tabs > div:nth-of-type(8){
+    transform: rotateX(0deg);
+    opacity: 1;
+    z-index: 1;
+}
+
+@media screen and (max-width: 700px){
+    .tabbed {
+        width: 400px;
+    }
+
+    .tabbed > label{
+        display: none;
+    }
+
+    .tabs > div{
+        width: 00px;
+        border: none;
+        padding: 0;
+        opacity: 1;
+        position: relative;
+        transform: none;
+        margin-bottom: 60px;
+    }
+
+    .tabs > div h2{
+        border-bottom: 2px solid cyan;
+        padding-bottom: 0.5em;
+    }
+}
